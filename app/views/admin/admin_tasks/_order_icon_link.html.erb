@@ -1,0 +1,10 @@
+<%  o = @product 
+    o ||= object 
+    o ||= @order
+    o ||= locals[:order] if defined? locals
+    o ||= locals[:product] if defined? locals
+  if task = Admin::AdminTasksHelper.find_task(o) %>
+  <%= link_to edit_admin_admin_task_path( task ) do %>
+    <%= task.done ? image_tag('admin/icons/accept.png') : image_tag('admin/icons/exclamation.png') %>
+  <% end %>
+<% end %>

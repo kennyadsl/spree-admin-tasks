@@ -1,0 +1,15 @@
+<%= hook :admin_task_new_form_header do %>
+  <h1><%= t("new_task") %></h1>
+
+  <%= render 'shared/error_messages', :target => @admin_task %>
+<% end %>
+
+<%= hook :admin_task_new_form do %>
+  <%= form_for(:admin_task, :url => collection_url) do |f| %>
+    <%= render :partial => "form", :locals => { :f => f } %>
+
+    <%= hook :admin_task_new_form_buttons do %>
+      <%= render :partial => "admin/shared/new_resource_links" %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,51 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_task"), new_object_url, :icon => 'add'  %>
+    </li>
+    <li>
+      <%= button_link_to params[:all] ? t("my_tasks"):t("all_tasks"), admin_admin_tasks_path( params[:all] ? {} : {:all => 'true'})  %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("admin_tasks") %></h1>
+
+<table class="index">
+  <thead>
+    <tr>
+    <%= hook :admin_tasks_index_headers do %>
+      <th><%= t("task") %></th>
+      <th><%= t("source") %></th>
+      <th><%= t("assigned_to") %></th>
+      <th><%= t("due_at") %></th>
+      <th><%= t("done") %></th>
+    <% end %>
+      <th>
+        <%= hook :admin_tasks_index_header_actions %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |admin_task|%>
+      <tr id="<%= dom_id admin_task %>">
+        <%- locals = {:admin_task => admin_task} %>
+        <%= hook :admin_tasks_index_rows, locals do %>
+          <td><%= admin_task.task %></td>
+          <td><%= source_link admin_task %></td>
+          <td><%= admin_task.user.email if admin_task.user %></td>
+          <td><%= I18n.l admin_task.due_at.to_date %></td>
+          <td><%= done_link admin_task %></td>
+        <% end %>
+        <td width="140px">
+          <%= hook :admin_tasks_index_row_actions, locals do %>
+            <%= link_to_edit admin_task %> &nbsp;
+            <%= link_to_delete admin_task %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

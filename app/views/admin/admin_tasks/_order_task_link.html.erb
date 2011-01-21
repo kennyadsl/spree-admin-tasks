@@ -1,0 +1,5 @@
+<div style='text-align:right;width:400px;float:right'>
+<%= raw link_to_unless( Admin::AdminTasksHelper.find_task(object) ,  t('new_task') , new_admin_admin_task_path(:source_type => "Order" , :source_id => object.id.to_s ) ) do %>
+  <%= render :partial =>  'admin/admin_tasks/order_icon_link' %>
+<% end %>
+</div>

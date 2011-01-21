@@ -1,0 +1,15 @@
+en:
+  new_task: New Task
+  task_updated: The Task has been updated
+  task: Task
+  due_at: Due by
+  done: Done
+  admin: Admin
+  editing_admin_task: Editing Admin Task
+  new_task: New Task
+  all_tasks: Show all Tasks
+  my_tasks: Show my Tasks
+  admin_tasks: Admin Tasks
+  source: Object
+  assigned_to: Assigned to
+  to_do: ToDo
