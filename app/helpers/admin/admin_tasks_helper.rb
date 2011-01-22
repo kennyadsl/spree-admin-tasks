@@ -7,7 +7,7 @@ module Admin::AdminTasksHelper
     when "Order"
       link_to "#{task.source.number} ( #{task.source.total} )" , admin_order_url(task.source)
     else
-      task.source.to_s
+      task.source_id ?  task.source.to_s : ""
     end
   end
   
