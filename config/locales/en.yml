@@ -1,4 +1,5 @@
 en:
+  admin_tasks: Tasks
   new_task: New Task
   task_updated: The Task has been updated
   task: Task

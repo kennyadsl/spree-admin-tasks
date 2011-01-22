@@ -28,7 +28,7 @@
   <%= f.hidden_field :source_type  %>
   <%= f.hidden_field :source_id  %>
   
-  <p><%=  "#{I18n.t('source')}: #{source_link(object)}" if object.source_id %></p>
+  <p><%=  raw "#{I18n.t('source')}: #{source_link(object)}" if object.source_id %></p>
 <% end %>
 
 

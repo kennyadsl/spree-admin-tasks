@@ -1,0 +1,15 @@
+fi:
+  admin_tasks: Tehtävää
+  new_task: Uusi tehtävä
+  task_updated: Tehtävä päivitetty
+  task: Tehtävä
+  due_at: Tehtävä ennen
+  admin: Asian hoitaja
+  editing_admin_task: Tehtävän muokkaus
+  all_tasks: Kaikki tehtävät
+  my_tasks: Minun tehtävät
+  source: Tilaus (tai..)
+  assigned_to: Tehtävän tekee
+  to_do: tehtävä
+  done: tehty
+  
