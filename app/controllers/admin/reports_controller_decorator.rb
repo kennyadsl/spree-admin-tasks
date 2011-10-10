@@ -1,5 +1,12 @@
 Admin::ReportsController.class_eval do
+
+  before_filter :kludge 
   
+  def kludge
+    return if Admin::ReportsController::AVAILABLE_REPORTS.has_key?(:open_orders)
+    Admin::ReportsController::AVAILABLE_REPORTS.merge!({ :open_orders => {:name => "Maksamatta", :description => "Maksamattomat tilaukset"}  })
+  end
+
   def open_orders
     params[:search] = {} unless params[:search]
     params[:search][:meta_sort] = "number.asc"
