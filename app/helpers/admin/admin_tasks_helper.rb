@@ -1,7 +1,7 @@
 module Admin::AdminTasksHelper
 
   def source_link task
-    return " " unless task.source
+    return " " unless task.source_id
     case task.source_type 
     when "Product"
       link_to task.source.name , edit_admin_product_url(task.source)
