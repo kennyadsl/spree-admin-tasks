@@ -6,6 +6,5 @@ Rails.application.routes.draw do
       end
     end
   end
-  match '/admin' => 'admin/admin_tasks#index', :as => :admin
 end
 
